@@ -1,0 +1,14 @@
+D:\Projects\FixaScrew\FixaScrew.DataSourceAgg.Common\bin\Debug\net6.0\FixaScrew.DataSourceAgg.Common.deps.json
+D:\Projects\FixaScrew\FixaScrew.DataSourceAgg.Common\bin\Debug\net6.0\FixaScrew.DataSourceAgg.Common.dll
+D:\Projects\FixaScrew\FixaScrew.DataSourceAgg.Common\bin\Debug\net6.0\FixaScrew.DataSourceAgg.Common.pdb
+D:\Projects\FixaScrew\FixaScrew.DataSourceAgg.Common\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Projects\FixaScrew\FixaScrew.DataSourceAgg.Common\obj\Debug\net6.0\FixaScrew.DataSourceAgg.Common.csproj.AssemblyReference.cache
+D:\Projects\FixaScrew\FixaScrew.DataSourceAgg.Common\obj\Debug\net6.0\FixaScrew.DataSourceAgg.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\FixaScrew\FixaScrew.DataSourceAgg.Common\obj\Debug\net6.0\FixaScrew.DataSourceAgg.Common.AssemblyInfoInputs.cache
+D:\Projects\FixaScrew\FixaScrew.DataSourceAgg.Common\obj\Debug\net6.0\FixaScrew.DataSourceAgg.Common.AssemblyInfo.cs
+D:\Projects\FixaScrew\FixaScrew.DataSourceAgg.Common\obj\Debug\net6.0\FixaScrew.DataSourceAgg.Common.csproj.CoreCompileInputs.cache
+D:\Projects\FixaScrew\FixaScrew.DataSourceAgg.Common\obj\Debug\net6.0\FixaScrew.DataSourceAgg.Common.csproj.CopyComplete
+D:\Projects\FixaScrew\FixaScrew.DataSourceAgg.Common\obj\Debug\net6.0\FixaScrew.DataSourceAgg.Common.dll
+D:\Projects\FixaScrew\FixaScrew.DataSourceAgg.Common\obj\Debug\net6.0\refint\FixaScrew.DataSourceAgg.Common.dll
+D:\Projects\FixaScrew\FixaScrew.DataSourceAgg.Common\obj\Debug\net6.0\FixaScrew.DataSourceAgg.Common.pdb
+D:\Projects\FixaScrew\FixaScrew.DataSourceAgg.Common\obj\Debug\net6.0\ref\FixaScrew.DataSourceAgg.Common.dll
