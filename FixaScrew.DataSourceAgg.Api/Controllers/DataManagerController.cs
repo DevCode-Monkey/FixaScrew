@@ -1,6 +1,7 @@
 using FixaScrew.DataSourceAgg.Common.Models;
 using FixaScrew.DataSourceAgg.Services;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace FixaScrew.DataSourceAgg.Api.Controllers;
 
@@ -8,20 +9,14 @@ namespace FixaScrew.DataSourceAgg.Api.Controllers;
 [Route("[controller]")]
 public class DataManagerController : ControllerBase
 {
-    private readonly ILogger<DataManagerController> _logger;
     private readonly IDataStoreService _dataStoreService;
     
-    public DataManagerController(
-        ILogger<DataManagerController> logger,
-        IDataStoreService dataStoreService
-        )
-    {
-        _logger = logger;
-        _dataStoreService = dataStoreService;
-    }
+    public DataManagerController(IDataStoreService dataStoreService) => _dataStoreService = dataStoreService;
 
-    [HttpGet(Name = "DataPull")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<List<ProductsResponse>> DataPull() => await _dataStoreService.PollDataStores();
+    [HttpGet]
+    [SwaggerOperation(Summary = "Query the data stores",
+        Description = "Pull data from the data stores and aggregate grouped by the product name")]
+    [SwaggerResponse(200, "A perfect result!", typeof(IEnumerable<ProductsResponse>))]
+    [SwaggerResponse(400, "Well - something wasn't quite right! ")]
+    public async Task<IActionResult> DataPull() => Ok(await _dataStoreService.PollDataStores());
 }

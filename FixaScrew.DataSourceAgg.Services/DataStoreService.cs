@@ -53,6 +53,9 @@ public class DataStoreService: IDataStoreService
 
     private async Task<List<DataResponse>> GetDataForCache()
     {
+        // Added to demo slow server polling
+        // Thread.Sleep(10000);
+        
         var results = new List<DataResponse>();
         results.AddRange(await _jsonService.GetData());
         results.AddRange(await _csvService.GetData());
