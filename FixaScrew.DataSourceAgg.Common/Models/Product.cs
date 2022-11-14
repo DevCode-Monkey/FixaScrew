@@ -1,4 +1,5 @@
 ﻿using FixaScrew.DataSourceAgg.Common.Enums;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace FixaScrew.DataSourceAgg.Common.Models;
 public class Product
