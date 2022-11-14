@@ -1,10 +1,9 @@
 ﻿using FixaScrew.DataSourceAgg.Common.Models;
 using FixaScrew.DataSourceAgg.Services;
 using FixaScrew.DataSourceAgg.Services.CsvFileStore;
+using FixaScrew.DataSourceAgg.Services.DatabaseFileStore;
 using FixaScrew.DataSourceAgg.Services.JsonFileStore;
 using FixaScrew.DataSourceAgg.Services.XmlFileStore;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace FixaScrew.DataSourceAgg.Api.Extensions;
 
@@ -24,13 +23,14 @@ public static class StartupConfig
 
     public static void AddDbContexts(this IServiceCollection services)
     {
-        services.AddDbContext<DataContext>();
+        services.AddDbContext<Common.Context.DataContext>();
     }
     public static void AddServices(this IServiceCollection services)
     {
         services.AddScoped<IJsonService, JsonService>();
         services.AddScoped<ICsvService, CsvService>();
         services.AddScoped<IXmlService, XmlService>();
+        services.AddScoped<IDatabaseService, DatabaseService>();
         services.AddScoped<IDataStoreService, DataStoreService>();
     }
 }
