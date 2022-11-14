@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "XFgZjk5P4GDXG5MhT6gHGxcg8GiFEyrp2ZRgfMH3U6Y=",
+  "Source": "FixaScrew.DataSourceAgg.Api",
+  "BasePath": "_content/FixaScrew.DataSourceAgg.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

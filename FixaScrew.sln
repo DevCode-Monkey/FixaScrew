@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixaScrew.DataSourceAgg.Api", "FixaScrew.DataSourceAgg.Api\FixaScrew.DataSourceAgg.Api.csproj", "{B64B5CF4-80A9-4D74-A28B-DA51C8240C4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixaScrew.DataSourceAgg.Services", "FixaScrew.DataSourceAgg.Services\FixaScrew.DataSourceAgg.Services.csproj", "{819B4AF1-0454-4846-8D0E-AF9BFC066221}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixaScrew.DataSourceAgg.Common", "FixaScrew.DataSourceAgg.Common\FixaScrew.DataSourceAgg.Common.csproj", "{848A636A-5DE2-439D-BE2D-477A4CE9D81E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B64B5CF4-80A9-4D74-A28B-DA51C8240C4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B64B5CF4-80A9-4D74-A28B-DA51C8240C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B64B5CF4-80A9-4D74-A28B-DA51C8240C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B64B5CF4-80A9-4D74-A28B-DA51C8240C4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{819B4AF1-0454-4846-8D0E-AF9BFC066221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{819B4AF1-0454-4846-8D0E-AF9BFC066221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{819B4AF1-0454-4846-8D0E-AF9BFC066221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{819B4AF1-0454-4846-8D0E-AF9BFC066221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{848A636A-5DE2-439D-BE2D-477A4CE9D81E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{848A636A-5DE2-439D-BE2D-477A4CE9D81E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{848A636A-5DE2-439D-BE2D-477A4CE9D81E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{848A636A-5DE2-439D-BE2D-477A4CE9D81E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
