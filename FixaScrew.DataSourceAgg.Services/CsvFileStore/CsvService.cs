@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using FixaScrew.DataSourceAgg.Common.Enums;
+﻿using FixaScrew.DataSourceAgg.Common.Enums;
 using FixaScrew.DataSourceAgg.Common.Extensions;
 using FixaScrew.DataSourceAgg.Common.Models;
 using Microsoft.Extensions.Options;

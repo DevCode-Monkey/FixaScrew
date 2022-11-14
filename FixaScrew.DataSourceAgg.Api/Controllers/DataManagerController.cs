@@ -1,10 +1,6 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using FixaScrew.DataSourceAgg.Common.Models;
 using FixaScrew.DataSourceAgg.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace FixaScrew.DataSourceAgg.Api.Controllers;
 

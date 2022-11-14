@@ -4,8 +4,8 @@ namespace FixaScrew.DataSourceAgg.Common.Models;
 
 public class DataResponse
 {
-    public BrandName Name { get; set; }
-    public ProductType Item { get; set; }
-    public decimal Cost { get; set; }
-    public int TotalItems { get; set; }
+    public BrandName Name { get; init; }
+    public ProductType Item { get; init; }
+    public decimal Cost { get; init; }
+    public int TotalItems { get; init; }
 }

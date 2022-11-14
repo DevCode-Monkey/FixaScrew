@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using FixaScrew.DataSourceAgg.Common.Entities;
-using FixaScrew.DataSourceAgg.Common.Enums;
+﻿using FixaScrew.DataSourceAgg.Common.Entities;
 using FixaScrew.DataSourceAgg.Common.Models;
 
 namespace FixaScrew.DataSourceAgg.Common.Extensions;

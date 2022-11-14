@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FixaScrew.DataSourceAgg.Common.Models;
+﻿namespace FixaScrew.DataSourceAgg.Common.Models;
 
 public class DataLocationOptions
 {

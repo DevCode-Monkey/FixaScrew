@@ -1,4 +1,5 @@
-﻿using FixaScrew.DataSourceAgg.Common.Models;
+﻿using FixaScrew.DataSourceAgg.Common.Contexts;
+using FixaScrew.DataSourceAgg.Common.Models;
 using FixaScrew.DataSourceAgg.Services;
 using FixaScrew.DataSourceAgg.Services.CsvFileStore;
 using FixaScrew.DataSourceAgg.Services.DatabaseFileStore;
@@ -22,7 +23,7 @@ public static class StartupConfig
     }
     
     public static void AddDbContexts(this IServiceCollection services) 
-        => services.AddDbContext<Common.Context.DataContext>();
+        => services.AddDbContext<ProductContext>();
 
     public static void AddServices(this IServiceCollection services)
     {

@@ -1,7 +1,6 @@
 ﻿using FixaScrew.DataSourceAgg.Common.Enums;
 
 namespace FixaScrew.DataSourceAgg.Common.Models;
-
 public class Brand
 {
     public BrandName Name { get; set; }

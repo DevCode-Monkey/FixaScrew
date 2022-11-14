@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using FixaScrew.DataSourceAgg.Common.Extensions;
+﻿using FixaScrew.DataSourceAgg.Common.Extensions;
 using FixaScrew.DataSourceAgg.Common.Models;
 using FixaScrew.DataSourceAgg.Services.CsvFileStore;
 using FixaScrew.DataSourceAgg.Services.DatabaseFileStore;
@@ -10,7 +7,6 @@ using FixaScrew.DataSourceAgg.Services.XmlFileStore;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace FixaScrew.DataSourceAgg.Services;
-
 public class DataStoreService: IDataStoreService
 {
     private readonly IJsonService _jsonService;
