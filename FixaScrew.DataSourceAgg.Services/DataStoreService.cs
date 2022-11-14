@@ -7,6 +7,7 @@ using FixaScrew.DataSourceAgg.Services.CsvFileStore;
 using FixaScrew.DataSourceAgg.Services.DatabaseFileStore;
 using FixaScrew.DataSourceAgg.Services.JsonFileStore;
 using FixaScrew.DataSourceAgg.Services.XmlFileStore;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace FixaScrew.DataSourceAgg.Services;
 
@@ -17,29 +18,51 @@ public class DataStoreService: IDataStoreService
     private readonly IXmlService _xmlService;
     private readonly IDatabaseService _dataStoreService;
 
+    private readonly IMemoryCache _memoryCache;
+
     public DataStoreService(
         IJsonService jsonService, 
         ICsvService csvService, 
         IXmlService xmlService,
-        IDatabaseService dataStoreService
+        IDatabaseService dataStoreService,
+        IMemoryCache memoryCache
         )
     {
         _jsonService = jsonService;
         _csvService = csvService;
         _xmlService = xmlService;
         _dataStoreService = dataStoreService;
+        _memoryCache = memoryCache;
     }
     
     public async Task<List<ProductsResponse>> PollDataStores()
     {
-        var results = new List<DataResponse>();
+        const string cacheKey = "dataResponseList";
+        
+        if (!_memoryCache.TryGetValue(cacheKey, out List<DataResponse> dataResponses))
+        {
+            dataResponses = await GetDataForCache();
+            var cacheExpiryOptions = new MemoryCacheEntryOptions
+            {
+                AbsoluteExpiration = DateTime.Now.AddSeconds(50),
+                Priority = CacheItemPriority.High,
+                SlidingExpiration = TimeSpan.FromSeconds(20)
+            };
 
+            _memoryCache.Set(cacheKey, dataResponses, cacheExpiryOptions);
+        }
+        
+        return GroupResultsToResponse(dataResponses);
+    }
+
+    private async Task<List<DataResponse>> GetDataForCache()
+    {
+        var results = new List<DataResponse>();
         results.AddRange(await _jsonService.GetData());
         results.AddRange(await _csvService.GetData());
         results.AddRange(await _xmlService.GetData());
         results.AddRange(await _dataStoreService.GetData());
-        
-        return GroupResultsToResponse(results);
+        return results;
     }
     
     private static List<ProductsResponse> GroupResultsToResponse(IEnumerable<DataResponse> results)
