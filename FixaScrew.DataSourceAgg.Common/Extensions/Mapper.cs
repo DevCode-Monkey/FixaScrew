@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using FixaScrew.DataSourceAgg.Common.Entities;
 using FixaScrew.DataSourceAgg.Common.Enums;
 using FixaScrew.DataSourceAgg.Common.Models;
 
@@ -33,6 +34,15 @@ public static class Mapper
             TotalItems = input.Inventory
         };
 
+    public static DataResponse MapToDataResponse(this SQLDataStore input) =>
+        new()
+        {
+            Name = input.Name,
+            Item = input.Product,
+            Cost = input.Amount,
+            TotalItems = input.StockAmount
+        };
+    
     public static Brand MapToBrand(this DataResponse input) =>
         new()
         {
@@ -49,4 +59,6 @@ public static class Mapper
                 Products = input
             }
         };
+    
+    
 }

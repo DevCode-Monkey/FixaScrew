@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using FixaScrew.DataSourceAgg.Common.Extensions;
 using FixaScrew.DataSourceAgg.Common.Models;
 using FixaScrew.DataSourceAgg.Services.CsvFileStore;
+using FixaScrew.DataSourceAgg.Services.DatabaseFileStore;
 using FixaScrew.DataSourceAgg.Services.JsonFileStore;
 using FixaScrew.DataSourceAgg.Services.XmlFileStore;
 
@@ -14,16 +15,19 @@ public class DataStoreService: IDataStoreService
     private readonly IJsonService _jsonService;
     private readonly ICsvService _csvService;
     private readonly IXmlService _xmlService;
+    private readonly IDatabaseService _dataStoreService;
 
     public DataStoreService(
         IJsonService jsonService, 
         ICsvService csvService, 
-        IXmlService xmlService
+        IXmlService xmlService,
+        IDatabaseService dataStoreService
         )
     {
         _jsonService = jsonService;
         _csvService = csvService;
         _xmlService = xmlService;
+        _dataStoreService = dataStoreService;
     }
     
     public async Task<List<ProductsResponse>> PollDataStores()
@@ -33,7 +37,8 @@ public class DataStoreService: IDataStoreService
         results.AddRange(await _jsonService.GetData());
         results.AddRange(await _csvService.GetData());
         results.AddRange(await _xmlService.GetData());
-
+        results.AddRange(await _dataStoreService.GetData());
+        
         return GroupResultsToResponse(results);
     }
     
