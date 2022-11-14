@@ -20,11 +20,10 @@ public static class StartupConfig
         services.Configure<DataLocationOptions>(DataLocationOptions.Json,
             builder.Configuration.GetSection("FileTypes:Json"));
     }
+    
+    public static void AddDbContexts(this IServiceCollection services) 
+        => services.AddDbContext<Common.Context.DataContext>();
 
-    public static void AddDbContexts(this IServiceCollection services)
-    {
-        services.AddDbContext<Common.Context.DataContext>();
-    }
     public static void AddServices(this IServiceCollection services)
     {
         services.AddScoped<IJsonService, JsonService>();
