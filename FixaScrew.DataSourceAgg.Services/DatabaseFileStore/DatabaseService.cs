@@ -1,4 +1,4 @@
-﻿using FixaScrew.DataSourceAgg.Common.Context;
+﻿using FixaScrew.DataSourceAgg.Common.Contexts;
 using FixaScrew.DataSourceAgg.Common.Entities;
 using FixaScrew.DataSourceAgg.Common.Enums;
 using FixaScrew.DataSourceAgg.Common.Extensions;
@@ -8,9 +8,9 @@ using Microsoft.EntityFrameworkCore;
 namespace FixaScrew.DataSourceAgg.Services.DatabaseFileStore;
 public class DatabaseService : Data<SQLDataStore> , IDatabaseService
 {
-    private readonly DataContext _context;
+    private readonly ProductContext _context;
     
-    public DatabaseService(DataContext context) => _context = context;
+    public DatabaseService(ProductContext context) => _context = context;
 
     public async Task<List<DataResponse>> GetData()
     {
@@ -22,7 +22,7 @@ public class DatabaseService : Data<SQLDataStore> , IDatabaseService
         return (from sql in await Pull() select sql.MapToDataResponse()).ToList();
     }
     
-    public override async Task<List<SQLDataStore>> Pull() 
+    public override async Task<List<SQLDataStore>> Pull()
         => await  _context.DataStore.Select(x => x).ToListAsync();
 
     private async void Create()

@@ -1,9 +1,5 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 using FixaScrew.DataSourceAgg.Common.Extensions;
 using FixaScrew.DataSourceAgg.Common.Models;
 using Microsoft.Extensions.Options;
@@ -12,8 +8,8 @@ namespace FixaScrew.DataSourceAgg.Services.JsonFileStore;
 public class JsonService : Data<JsonResponse>, IJsonService
 {
     private readonly DataLocationOptions _json;
-
-    public JsonService(IOptionsSnapshot<DataLocationOptions> options) 
+    
+    public JsonService(IOptionsSnapshot<DataLocationOptions> options)
         => _json = options.Get(DataLocationOptions.Json);
 
     public async Task<List<DataResponse>> GetData() 
@@ -24,17 +20,10 @@ public class JsonService : Data<JsonResponse>, IJsonService
         var file = Path.Combine(_json.BaseDirectory, _json.Location);
 
         await using var stream = File.OpenRead(Path.GetFullPath(file));
-        var options = new JsonSerializerOptions
-        {
-            Converters =
-            {
-                new JsonStringEnumConverter(JsonNamingPolicy.CamelCase)
-            }
-        };
-        
+
         return new List<JsonResponse>
         {
-            await JsonSerializer.DeserializeAsync<JsonResponse>(stream, options) ?? new JsonResponse()
+            await JsonSerializer.DeserializeAsync<JsonResponse>(stream) ?? new JsonResponse()
         };
     }
 }

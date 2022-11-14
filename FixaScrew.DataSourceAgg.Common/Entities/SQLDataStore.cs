@@ -1,7 +1,6 @@
 ﻿using FixaScrew.DataSourceAgg.Common.Enums;
 
 namespace FixaScrew.DataSourceAgg.Common.Entities;
-
 public class SQLDataStore
 {
     public int Id { get; set; }
