@@ -17,7 +17,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
+builder.Services.AddDbContexts();
 builder.Services.AddFileOptions(builder);
 builder.Services.AddServices();
 

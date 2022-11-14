@@ -17,9 +17,14 @@ public static class StartupConfig
         
         services.Configure<DataLocationOptions>(DataLocationOptions.Csv,
             builder.Configuration.GetSection("FileTypes:Csv"));
-        
+
         services.Configure<DataLocationOptions>(DataLocationOptions.Json,
             builder.Configuration.GetSection("FileTypes:Json"));
+    }
+
+    public static void AddDbContexts(this IServiceCollection services)
+    {
+        services.AddDbContext<DataContext>();
     }
     public static void AddServices(this IServiceCollection services)
     {
